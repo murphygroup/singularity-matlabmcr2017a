@@ -9,18 +9,17 @@ IncludeCmd: yes
 %post
     echo "Update aptitude"
     /usr/bin/apt-get update && apt-get install -y --no-install-recommends apt-utils
-    /usr/bin/apt-get update && /usr/bin/apt-get -y upgrade
+    /usr/bin/apt-get -y upgrade
     /usr/bin/apt-get update --fix-missing
-    /usr/bin/apt-get install -y vim wget
     /usr/bin/apt-get --assume-yes install libxext-dev
     /usr/bin/apt-get install -y build-essential git \
-    unzip \
-	xorg \
-	wget \
-	tree \
-	pandoc \
-	curl \
-	vim
+        unzip \
+		xorg \
+		wget \
+		tree \
+		pandoc \
+		curl \
+		vim
 	
     echo "Downloading Matlab MCR 2017a"
     mkdir /mcr-install && \
